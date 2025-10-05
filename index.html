@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maksims Budkevičs — dizainers</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Maksims Budkevičs — dizainers. Labs, centīgs students no Rīgas. Instagram: mbudka__" />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --soft-green: #9ed6b0; /* mīksti zaļā */
+      --dark-green: #2f6f4a;
+      --muted: #6b7280;
+      --card-shadow: 0 8px 24px rgba(46,60,80,0.08);
+      --radius: 14px;
+      --max-width: 980px;
+      --gap: 20px;
+      --glass: rgba(255,255,255,0.7);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), #f7fff7);
+      color:#0b1220;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    /* card left */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border-radius:var(--radius);
+      box-shadow:var(--card-shadow);
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      min-height:240px;
+    }
+
+    .avatar{
+      width:92px;
+      height:92px;
+      border-radius:20px;
+      background: linear-gradient(135deg, var(--soft-green), var(--dark-green));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#fff;
+      font-size:28px;
+      letter-spacing:0.6px;
+      box-shadow: 0 6px 18px rgba(47,111,74,0.15);
+      flex-shrink:0;
+    }
+
+    .name{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    h1{
+      margin:0;
+      font-size:20px;
+      line-height:1;
+      letter-spacing:0.2px;
+    }
+
+    .role{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .location{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .actions{
+      margin-top:6px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      text-decoration:none;
+      color:var(--dark-green);
+      background:linear-gradient(180deg, #ffffff, #f3fff6);
+      box-shadow: 0 6px 16px rgba(46,60,80,0.04);
+      transition:transform .15s ease, box-shadow .15s ease;
+      font-size:14px;
+    }
+    .btn:hover{ transform:translateY(-4px); box-shadow: 0 12px 30px rgba(46,60,80,0.08); }
+
+    .btn--primary{
+      background: linear-gradient(180deg, var(--soft-green), var(--dark-green));
+      color: #fff;
+    }
+
+    /* right content */
+    .content{
+      background: transparent;
+      border-radius:var(--radius);
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      justify-content:center;
+    }
+
+    .about{
+      background: #fff;
+      border-radius:12px;
+      padding:18px;
+      box-shadow: var(--card-shadow);
+      color:#0b1220;
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .stats{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .stat{
+      background: linear-gradient(180deg, rgba(158,214,176,0.12), rgba(47,111,74,0.04));
+      border-radius:10px;
+      padding:12px 14px;
+      min-width:140px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .stat .label{ font-size:12px; color:var(--muted); }
+    .stat .
+
+..., [05.10.2025 22:29]
+value{ font-weight:700; font-size:18px; color:var(--dark-green); }
+
+    .footer{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    /* small screens */
+    @media (max-width:880px){
+      .wrap{ grid-template-columns: 1fr; padding:0; }
+      .card{ flex-direction:row; align-items:center; gap:16px; padding:18px; }
+      .content{ padding:18px; }
+      .about{ font-size:14px; }
+      .stat{ min-width:48%; }
+      body{ padding:20px; }
+    }
+
+    @media (max-width:420px){
+      .stat{ min-width:100%; }
+      h1{ font-size:18px; }
+      .avatar{ width:76px; height:76px; font-size:22px; border-radius:12px; }
+    }
+
+    /* subtle focus styles */
+    a:focus, button:focus { outline:3px solid rgba(47,111,74,0.16); outline-offset:2px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="main-title">
+    <!-- left card -->
+    <section class="card" aria-label="Personas informācija">
+      <div style="display:flex;gap:14px;align-items:center;">
+        <div class="avatar" aria-hidden="true">MB</div>
+        <div>
+          <div class="name">
+            <div>
+              <h1 id="main-title">Maksims Budkevičs</h1>
+              <p class="role">dizainers</p>
+            </div>
+          </div>
+
+          <div class="location" aria-hidden="false" style="margin-top:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" fill="currentColor" opacity="0.9"/>
+              <circle cx="12" cy="9" r="2.2" fill="#fff"/>
+            </svg>
+            <span>Rīga, Latvija</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; display:flex;flex-direction:column; gap:10px;">
+        <div style="font-size:13px; color:var(--muted); max-width:240px;">
+          Labs, centīgs students, kurš sapņo absolvēt skolu ar izcilību un strādāt par 1 miljonu eiro gadā.
+        </div>
+
+        <div class="actions" role="group" aria-label="Sociālie kontakti">
+          <a class="btn" href="https://instagram.com/mbudka__" target="_blank" rel="noopener noreferrer" aria-label="Atvērt Instagram (jaunā cilnē)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 8.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            @mbudka__
+          </a>
+
+          <a class="btn btn--primary" href="https://instagram.com/mbudka__" target="_blank" rel="noopener noreferrer" aria-label="Sazināties Instagram">
+            Rakstīt
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- right content -->
+    <section class="content" aria-label="Papildu informācija">
+      <div class="about" aria-labelledby="about-title">
+        <h2 id="about-title" style="margin:0 0 8px 0; font-size:16px;">Par mani</h2>
+        <p style="margin:0;">
+          Sveiki! Esmu Maksims — dizainers no Rīgas. Esmu labs un centīgs students, kurš tiecas uz akadēmisko izcilību un ambiciozi plāno nākotni — sapnī strādāt par 1 miljonu eiro gadā. Mani interesē tīrs, mūsdienīgs dizains, lietotāja pieredze un vizuālā komunikācija.
+        </p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap;">
+          <div class="stat" role="note" aria-label="Statistika: statuss">
+            <div class="label">Statuss</div>
+
+..., [05.10.2025 22:29]
+<div class="value">Students</div>
+          </div>
+
+          <div class="stat" role="note" aria-label="Statistika: mērķis">
+            <div class="label">Mērķis</div>
+            <div class="value">1 000 000 €/gadi</div>
+          </div>
+
+          <div class="stat" role="note" aria-label="Statistika: vieta">
+            <div class="label">Atrašanās vieta</div>
+            <div class="value">Rīga</div>
+          </div>
+        </div>
+
+        <div class="about" style="background:transparent;padding:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="color:var(--muted);font-size:13px;">Sociālie tīkli</div>
+            <div style="display:flex;gap:10px;">
+              <a class="btn" href="https://instagram.com/mbudka__" target="_blank" rel="noopener noreferrer" aria-label="Instagram profils">@mbudka__</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer" aria-hidden="false">
+          <div>Veidots modernā minimalisma estētikā.</div>
+          <div aria-hidden="true">·</div>
+          <div>Krāsu shēma: mīksti zaļa / balta</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Small enhancement: copy IG handle to clipboard on double click
+    (function(){
+      const igButtons = document.querySelectorAll('a[href*="instagram.com/mbudka__"]');
+      igButtons.forEach(btn=>{
+        btn.addEventListener('dblclick', async (e)=>{
+          e.preventDefault();
+          try{
+            await navigator.clipboard.writeText('@mbudka__');
+            btn.textContent = 'Kopēts @mbudka__';
+            setTimeout(()=>{ btn.textContent = '@mbudka__'; }, 1400);
+          }catch(err){
+            // ignore
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
